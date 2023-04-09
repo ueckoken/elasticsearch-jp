@@ -24,7 +24,7 @@ jobs:
         run: |
           LABEL=$(grep FROM Dockerfile | awk '{print $2}' |tr ':' ' ' |awk '{print $2}')
           echo "LABEL is $LABEL"
-          echo "LABEL=$LABEL" >> $GITHUB_OUTPUT
+          echo "LABEL=$LABEL" >> $GITHUB_ENV
       - name: Build and push Container image
         uses: docker/build-push-action@v4
         with:
