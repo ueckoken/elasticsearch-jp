@@ -28,5 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/ueckoken/elasticsearch-jp
-          labels: ${{ steps.tag.env.LABEL }}
+          tags: ghcr.io/ueckoken/elasticsearch-jp:${{ steps.tag.env.LABEL }}
