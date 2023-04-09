@@ -21,7 +21,7 @@ jobs:
       - name: extract-tag
         id: tag
         run: |
-          LABEL=(grep FROM Dockerfile | awk '{print $2}' |tr ':' ' ' |awk '{print $2}')
+          LABEL=$(grep FROM Dockerfile | awk '{print $2}' |tr ':' ' ' |awk '{print $2}')
           echo "LABEL=$LABEL" >> $GITHUB_OUTPUT
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
